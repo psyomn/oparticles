@@ -18,16 +18,23 @@ We want to look out how these aspects are dealt with in OCaml:
 * Concurrency
 * String Manipulation (see how easy or not it is to deal with strings)
 * Perfomance (Read somewhere that OCaml is supposed to be industrial strength;
-therefore I'll be using glcaml in order to demonstrate a n-particle application)
+therefore I'll be using glcaml in order to demonstrate a n-particle
+application)
 * Software Engineering practices
 * Documentation of APIs (trivial, but nice to know)
+
+Read Moar
+=========
+Look at the project-breakdown.markdown
 
 Resources
 =========
 
+* [Compiling OCaml Projects](http://ocaml.org/tutorials/compiling_ocaml_projects.html)
+* [Oasis Quickstart](http://oasis.forge.ocamlcore.org/quickstart.html)
 * [GlCaml](http://glcaml.sourceforge.net/)
 * [ocaml-book](https://github.com/bobzhang/ocaml-book)
 
 Repositories that helped learn OCaml:
-
+* [Biocaml](https://github.com/biocaml/biocaml)
 

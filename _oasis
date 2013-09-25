@@ -1,0 +1,13 @@
+OASISFormat: 0.3
+Name:        oparticles
+Version:     0.1
+Synopsis:    Particle simulator that uses glcaml to display stuff.
+Authors:     Simon (psyomn) Symeonidis
+License:     GPL-3
+Plugins:     META (0.3)
+
+Executable oparticles
+  Path:       ./src
+  BuildTools: ocamlbuild
+  MainIs:     main.ml
+  

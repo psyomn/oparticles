@@ -43,5 +43,8 @@ Particles should have a mass, be attracted by gravity, and also have velocities
 and accelerations. An interesting aspect would be to see if we can generalize
 a particle X, and plugin the movement behavior with a lambda. 
 
+Demo Notes
+==========
 
+To be done.
 
