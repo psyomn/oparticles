@@ -33,7 +33,9 @@ Resources
 * [Compiling OCaml Projects](http://ocaml.org/tutorials/compiling_ocaml_projects.html)
 * [Oasis Quickstart](http://oasis.forge.ocamlcore.org/quickstart.html)
 * [GlCaml](http://glcaml.sourceforge.net/)
-* [ocaml-book](https://github.com/bobzhang/ocaml-book)
+* [Classes and Objects](http://caml.inria.fr/pub/docs/manual-ocaml-4.00/manual005.html)
+* [ocaml-book](https://github.com/bobzhang/ocaml-book) (Kind of lacking...)
+* [Class def example](https://github.com/ocaml-batteries-team/batteries-included/blob/1fde353b151ea6487d6c5a90b3b9db3c485f5ff8/src/batIO.mli#L775)
 
 Repositories that helped learn OCaml:
 * [Biocaml](https://github.com/biocaml/biocaml)

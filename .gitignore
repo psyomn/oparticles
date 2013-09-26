@@ -1,3 +1,7 @@
 setup.ml
 myocamlbuild.ml
 _tags
+_build/
+main.byte
+setup.*
+*.swp
