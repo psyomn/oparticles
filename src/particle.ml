@@ -1,27 +1,25 @@
-(* 
+open String;;
+
 class particle =
-  object
-    private val mutable mass         : float  = 0.0
-    private val mutable velocity     : float  = 0.0
-    private val mutable acceleration : float  = 0.0
-    private val mutable group        : int    = 0
-    private val mutable label        : string = ""
+  object (self)
+    val mutable mass         = 0.0
+    val mutable velocity     = 0.0
+    val mutable acceleration = 0.0
+    val mutable group        = 0
+    val mutable label        = ""
 
-    method get_mass         = mass
-    method get_velocity     = velocity
+    method get_mass = mass
+    method get_velocity = velocity
     method get_acceleration = acceleration
-    method get_group        = group
-    method get_label        = label
+    method get_group = group
+    method get_label = label
 
-    method set_mass i_mass  = 0.0
-    method set_velocity i_vel = 0.0
-    method set_acceleration i_acc = 0.0
-    method set_group        = 0
-    method set_label        = "todo"
+    method set_mass i_mass        = mass <- i_mass
+    method set_velocity i_vel     = velocity <- i_vel
+    method set_acceleration i_acc = acceleration <- i_acc
+    method set_group i_g          = group <- i_g
+    method set_label i_l          = label <- i_l
+
+    method to_string = "Particle " ^ label ^ " [v:a:m:] "
   end;;
 
-*)
-
-module Particle = struct
-  let derp = 12;;
-  end 
