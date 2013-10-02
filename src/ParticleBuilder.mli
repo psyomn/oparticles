@@ -8,6 +8,7 @@
 open Particle;;
 
 module ParticleBuilder : sig
-    val create_particle : particle
+  val create_particle : particle
     (* val create_jonny    : particle *)
-  end
+  end;;
+

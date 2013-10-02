@@ -2,10 +2,13 @@
  * Implementation of the particle builder
  * @author Simon Symeonidis 
  *) 
+
 open Particle;;
 
-module ParticleBuilder = sig
-    let create_particle = new particle
+module ParticleBuilder = struct
+
+  let create_particle = new Particle.particle;
+
 (*
     let create_jonny = ipart <- new particle; 
       ipart#set_mass 0.5;
@@ -15,4 +18,4 @@ module ParticleBuilder = sig
       ipart#set_label "jonny";
 *)      
 
-  end
+  end;;
