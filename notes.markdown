@@ -4,7 +4,7 @@ Some minor notes
 ### Preface
 
 I am a beginner programmer in OCaml. These are a few personal notes of mine to
-look back at in the future, if I ever need a quick refreshed on the language.
+look back at in the future, if I ever need a quick refresher on the language.
 You can use them too.
 
 ### First things first
@@ -54,4 +54,43 @@ let sqr x = x * x
 
 ### Classes
 
+OCaml supports object orientation, and also follows the same idea with the _ml_
+and _mli_ files, where you need to provide specification and implementation.
+
+Here is a very generic example that covers some aspects of this. Let us take
+the usual *Person* class, and define it: 
+
+First the signature (person.mli): 
+
+````ocaml
+class person :
+  object
+    val mutable name : string
+    val mutable surname : string
+    method get_name : string
+    method get_surname : string
+    method to_string : string
+  end;;
+                                      
+````
+
+And now the implementation (person.ml): 
+
+````ocaml
+class person 
+class person = 
+  object (self)
+    val mutable name = "jon"
+    val mutable surname = "doe"
+    method get_name = name
+    method get_surname = surname
+    method to_string = name ^ " " ^ surname
+  end;;
+````
+
+# Resources
+
+Nice files and repositories to learn from:
+
+* [ast_mapper.mli @ merlin](https://github.com/def-lkb/merlin/blob/b12a766034ee678e87648a1bc455213c26f491e1/src/ocaml_401/parsing/ast_mapper.mli)
 
