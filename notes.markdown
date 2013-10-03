@@ -28,28 +28,6 @@ let sqr x = x * x
 
 ````
 
-### Specification and Implementation
-
-Just like in C, where you can define specifications in header files _*.h_, 
-and implementation in the _*.c_ files, OCaml uses a similar mechanism. The
-specification is inside _*.mli_ files, and the implementation is in _*.ml_
-files.
-
-Let us consider the case where we would want to have the interface of a 
-squaring function exposed to the rest of the application, and leaving the 
-implementation to be done in another file. We would need to provide the 
-signature of the function in the mli file. functions.mli would read as: 
-
-````ocaml
-val sqr : int -> int
-````
-
-And the implementation would read as: 
-
-````ocaml
-let sqr x = x * x
-````
-
 ### Modules
 
 ### Classes
@@ -77,7 +55,6 @@ class person :
 And now the implementation (person.ml): 
 
 ````ocaml
-class person 
 class person = 
   object (self)
     val mutable name = "jon"
@@ -88,9 +65,43 @@ class person =
   end;;
 ````
 
+### Specification and Implementation
+
+Just like in C, where you can define specifications in header files _*.h_, 
+and implementation in the _*.c_ files, OCaml uses a similar mechanism. The
+specification is inside _*.mli_ files, and the implementation is in _*.ml_
+files.
+
+Let us consider the case where we would want to have the interface of a 
+squaring function exposed to the rest of the application, and leaving the 
+implementation to be done in another file. We would need to provide the 
+signature of the function in the mli file. functions.mli would read as: 
+
+````ocaml
+val sqr : int -> int
+````
+
+And the implementation would read as: 
+
+````ocaml
+let sqr x = x * x
+````
+
+
+
 # Resources
 
 Nice files and repositories to learn from:
 
+
+__Classes__
+
 * [ast_mapper.mli @ merlin](https://github.com/def-lkb/merlin/blob/b12a766034ee678e87648a1bc455213c26f491e1/src/ocaml_401/parsing/ast_mapper.mli)
+* [batIO.mli @ batteries-included](https://github.com/ocaml-batteries-team/batteries-included/blob/1fde353b151ea6487d6c5a90b3b9db3c485f5ff8/src/batIO.mli)
+
+__Bibliography__
+
+A pretty good book is the following. I much preferred it to the [online tutorials](http://ocaml.org/tutorials/).
+
+* [Developing Applications with OCaml](http://caml.inria.fr/pub/docs/oreilly-book/index.html)
 
