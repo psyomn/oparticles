@@ -1,23 +1,26 @@
+open Particle;;
+open Random;;
+
+
 (*
  * Implementation of the particle builder
  * @author Simon Symeonidis 
  *) 
-
-open Particle;;
-open Random;;
-
-(* Use whatever is available in order to initialize *)
-Random.self_init;;
-
 module ParticleBuilder = struct
+  (* Shorthand for a random float bounded by 'f' *)
+  let rfloat f = Random.float f;;
 
-  let create_particle = new Particle.particle;;
+  (* Shorthand for a random int bounded by 'i' *)
+  let rint   i = Random.int i;;
+
+  (* Create a new particle *)
+  let create_particle () = new Particle.particle;;
 
   (* This is just a function that creates a particle with some predefined and
      hardcoded values. This is here mainly because I was fiddling around with
-     the language*)
-  let create_jonny = 
-    let n = new Particle.particle in
+     the language *)
+  let create_jonny () = 
+    let n = new Particle.particle in 
       n#set_mass         0.2;
       n#set_label        "jonny";
       n#set_velocity     0.3;
@@ -28,20 +31,20 @@ module ParticleBuilder = struct
     n;;
 
   (* Create a fully randomized particle *)
-  let create_random =
+  let create_random () =
     let n = new Particle.particle in
-      n#set_mass         (Random.float 1.0);
+      n#set_mass         (rfloat 1.0);
       n#set_label        "random";
-      n#set_velocity     (Random.float 2.0);
-      n#set_acceleration (Random.float 0.0);
-      n#set_group        (Random.int 4);
-      n#set_angle_xz     (Random.float 360.0);
-      n#set_angle_xy     (Random.float 360.0);
+      n#set_velocity     (rfloat 2.0);
+      n#set_acceleration (rfloat 1.0);
+      n#set_group        (rint 4);
+      n#set_angle_xz     (rfloat 360.0);
+      n#set_angle_xy     (rfloat 360.0);
     n;;
 
   (* Recursive function to create a list of randomized particles *)
   let rec create_list amnt = 
-    if amnt = 0 then [] else create_random :: create_list (amnt - 1);;
+    if amnt = 0 then [] else create_random() :: create_list (amnt - 1);;
   
   (* Recursive function to print out some particles *)
   let rec print_list plist =
@@ -50,6 +53,5 @@ module ParticleBuilder = struct
       print_endline ((List.hd plist) # to_string);
       print_list (List.tl plist);
     end;;
-
 end;; (* module ParticleBuilder *)
 

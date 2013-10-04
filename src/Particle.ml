@@ -1,6 +1,5 @@
 open String;;
 
-
   class particle =
     object (self)
       val mutable mass         = 0.0
@@ -27,7 +26,12 @@ open String;;
       method set_angle_xy i_a       = angle_xy <- i_a
       method set_angle_xz i_a       = angle_xz <- i_a
   
-      method to_string = "Particle " ^ label ^ " [v:a:m:] "
+      method to_string = 
+        "Prtcl [label:" ^ label ^ " " 
+        ^ "group:" ^ (string_of_int group) ^ "] "
+        ^ "[v:" ^ (string_of_float velocity)
+        ^ " a:" ^ (string_of_float acceleration)
+        ^ " m:" ^ (string_of_float mass)
+        ^ "] "
     end;;
-
 

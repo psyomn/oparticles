@@ -99,9 +99,12 @@ __Classes__
 * [ast_mapper.mli @ merlin](https://github.com/def-lkb/merlin/blob/b12a766034ee678e87648a1bc455213c26f491e1/src/ocaml_401/parsing/ast_mapper.mli)
 * [batIO.mli @ batteries-included](https://github.com/ocaml-batteries-team/batteries-included/blob/1fde353b151ea6487d6c5a90b3b9db3c485f5ff8/src/batIO.mli)
 
-__Bibliography__
+__Bibliography / Other Paper-y Stuff__
 
 A pretty good book is the following. I much preferred it to the [online tutorials](http://ocaml.org/tutorials/).
 
 * [Developing Applications with OCaml](http://caml.inria.fr/pub/docs/oreilly-book/index.html)
+
+* [Design Patterns in OCaml (Vincent & Wagner)](http://people.csail.mit.edu/dnj/teaching/6898/projects/vicente-wagner.pdf)
+
 
