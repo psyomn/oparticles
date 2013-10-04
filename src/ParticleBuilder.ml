@@ -23,7 +23,8 @@ module ParticleBuilder = struct
       n#set_velocity     0.3;
       n#set_acceleration 0.0;
       n#set_group        0;
-      n#set_angle        90.0;
+      n#set_angle_xz     90.0;
+      n#set_angle_xy     90.0;
     n;;
 
   (* Create a fully randomized particle *)
@@ -34,7 +35,8 @@ module ParticleBuilder = struct
       n#set_velocity     (Random.float 2.0);
       n#set_acceleration (Random.float 0.0);
       n#set_group        (Random.int 4);
-      n#set_angle        (Random.float 180.0);
+      n#set_angle_xz     (Random.float 360.0);
+      n#set_angle_xy     (Random.float 360.0);
     n;;
 
   (* Recursive function to create a list of randomized particles *)
