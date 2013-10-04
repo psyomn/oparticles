@@ -2,8 +2,11 @@ OParticles!!
 ============
 
 This is a case study in OCaml in order to learn the language. I'll be doing 
-something simpler in this project; I will be using OpenGL with this language
-in order to show some bouncing particles inside a box, with maybe, physics. 
+something simpler in this project; ~~I will be using OpenGL with this language
+in order to show some bouncing particles inside a box, with maybe, physics.~~
+it ended up being disastrous, and I lost too much time looking into this. I was
+not able to get any of the Gl libraries working, and there was minimal 
+documentation as well. Oh well!
 
 The reason of this is because OCaml is said to be an industrial strength 
 language, and graphics + calculations tend to require some sort of performance. 

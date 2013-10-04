@@ -26,6 +26,7 @@ open String;;
       method set_angle_xy i_a       = angle_xy <- i_a
       method set_angle_xz i_a       = angle_xz <- i_a
   
+      (* Mainly for printing the particle information on screen *)
       method to_string = 
         "Prtcl [label:" ^ label ^ " " 
         ^ "group:" ^ (string_of_int group) ^ "] "
