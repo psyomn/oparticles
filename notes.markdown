@@ -30,6 +30,29 @@ let sqr x = x * x
 
 ### Modules
 
+You can define reusable components in modules. For example in this case study
+we wanted to simulate particles. Therefore the elementary `SUVAT` equestions
+were used. To group them together somewhere, where all the components of the
+software could request them from, in a logical manner, we add them to
+`Physics.mli`. Modules have signature files, and implementation files.
+
+
+
+*Example 1*
+``ocaml
+
+```
+
+*Example 2*
+
+(Interface)
+``ocaml
+
+
+```
+
+(Implementation)
+
 ### Classes
 
 OCaml supports object orientation, and also follows the same idea with the _ml_
