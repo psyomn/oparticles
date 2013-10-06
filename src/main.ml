@@ -1,10 +1,11 @@
-open Particle;;
-open ParticleBuilder;;
+(* Main entry point! *) 
+
+open Room;;
 
 let _ = Random.self_init()
-let particle_list = ParticleBuilder.create_list 10
+let simulation = new Room.room
 
 let main = 
-  print_endline (string_of_int (List.length particle_list));
-  ParticleBuilder.print_list particle_list;;
+  simulation # init();
+  simulation # start();;
 

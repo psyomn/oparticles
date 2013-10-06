@@ -5,5 +5,16 @@
  * @author Simon Symeonidis 
  *)
 
-class room : object
+open Particle;;
+open ParticleBuilder;;
+
+class room : 
+  object
+    val mutable particles : Particle.particle list
+    val maximum_ticks : int
+
+    method init      : unit -> unit
+    method tick      : unit -> unit
+    method start     : unit -> unit
+    method to_string : unit -> unit
   end;;

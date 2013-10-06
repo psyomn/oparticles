@@ -1,7 +1,6 @@
 open Particle;;
 open Random;;
 
-
 (*
  * Implementation of the particle builder. This provides some static 
  * creational patterns for creating particles. 
@@ -55,5 +54,6 @@ module ParticleBuilder = struct
       print_endline ((List.hd plist) # to_string);
       print_list (List.tl plist);
     end;;
+
 end;; (* module ParticleBuilder *)
 
