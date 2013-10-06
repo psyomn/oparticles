@@ -1,0 +1,39 @@
+'
+' You need plantuml to render this 
+'   plantuml.sf.net
+'
+' Author : Simon Symeonidis 
+'
+
+@startuml
+  title Overall Process
+
+== Initialization == 
+  main -> Room : <<create>>
+
+  Room -> ParticleBuilder : create_random
+
+  loop num-particle times
+    ParticleBuilder -> Particle  : <<create>> Particle(randomParams)
+    Particle --> ParticleBuilder : particles
+  end
+
+  ParticleBuilder --> Room : List[Particle]
+  Room --> main : room
+
+== Simulation == 
+
+  main -> Room : start
+  loop simulation_done  = false
+    Room -> ParticleManager : tick(particles)
+    ParticleManager -> Physics : do_physics
+    Physics -> CoordinateHelper : check_bounds
+    CoordinateHelper --> Physics : coordinate_checks
+    Physics --> ParticleManager : List[Particle]
+    ParticleManager --> Room : () 
+  end
+
+  Room --> main
+
+@enduml
+

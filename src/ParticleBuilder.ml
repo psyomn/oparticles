@@ -3,7 +3,9 @@ open Random;;
 
 
 (*
- * Implementation of the particle builder
+ * Implementation of the particle builder. This provides some static 
+ * creational patterns for creating particles. 
+ *
  * @author Simon Symeonidis 
  *) 
 module ParticleBuilder = struct
