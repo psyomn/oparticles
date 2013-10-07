@@ -33,6 +33,7 @@ class room =
     method tick () = 
       current_tick <- current_tick + 1;
       ParticleManager.tick particles;
+      ParticleManager.collision_check particles bounds;
       print_endline ("Tick # " ^ string_of_int current_tick);
 
     (* Print all the information in the room - essentially what happens in

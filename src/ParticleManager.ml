@@ -17,19 +17,19 @@ module ParticleManager = struct
 
   (* Bounce against X wall *)
   let bounce_x b p =
-    if p # get_x > CoordinateHelper.fs b || p # get_x < CoordinateHelper.th b
+    if p # get_x > CoordinateHelper.fs b || p # get_x < 0.0
     then p # set_angle_xy (p # get_angle_xy +. Physics.half_pi)
     else ();;
 
   (* Bounce against Y wall *)
   let bounce_z b p = 
-    if p # get_z > CoordinateHelper.fs b || p # get_z < CoordinateHelper.th b
-    then p # set_angle_xy (p # get_angle_xz +. Physics.half_pi)
+    if p # get_z > CoordinateHelper.th b || p # get_z < 0.0
+    then p # set_angle_xz (p # get_angle_xz +. Physics.half_pi)
     else ();;
 
   (* Bounce against Z wall *)
   let bounce_y b p = 
-    if p # get_y > CoordinateHelper.fs b || p # get_y < CoordinateHelper.th b
+    if p # get_y > CoordinateHelper.sc b || p # get_y < 0.0
     then p # set_angle_xy (p # get_angle_xy +. Physics.half_pi)
     else ();;
 
