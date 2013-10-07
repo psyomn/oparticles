@@ -7,5 +7,11 @@
 open Physics;;
 
 module ParticleManager = struct
-  end;;
+  (* Iterate each particle, and apply its tick *)
+  let rec tick particles = 
+    if particles = [] then () else begin
+      Physics.apply (List.hd particles);
+      tick (List.tl particles);
+    end;;
+end;;
 

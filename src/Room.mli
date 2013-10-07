@@ -5,11 +5,14 @@
  * @author Simon Symeonidis 
  *)
 
-open Particle;;
+open Coordinate
+open Particle
+open ParticleManager
 open ParticleBuilder;;
 
 class room : 
   object
+    val bounds : Coordinate.coordinate
     val mutable particles : Particle.particle list
     val maximum_ticks : int
     val mutable current_tick  : int

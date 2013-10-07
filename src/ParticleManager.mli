@@ -1,4 +1,6 @@
 (* Particle Manager *)
 
 module ParticleManager : sig
-  end;;
+  val tick : Particle.particle list -> unit
+  val collision_check : Particle.particle list -> unit
+end;;

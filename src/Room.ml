@@ -4,10 +4,15 @@
  * @author Simon Symeonidis 
  *)
 
+open Coordinate
+open Particle
+open ParticleManager
 open ParticleBuilder;;
 
 class room = 
   object(self)
+    (* Bounds of the room *)
+    val bounds = (100.0, 100.0, 100.0)
 
     (* Maximum ticks of the simulation *)
     val maximum_ticks = 10_000
@@ -27,7 +32,7 @@ class room =
     (* A tick in the simulation, with a single step *)
     method tick () = 
       current_tick <- current_tick + 1;
-      ParticleBuilder.tick particles;
+      ParticleManager.tick particles;
       print_endline ("Tick # " ^ string_of_int current_tick);
 
     (* Print all the information in the room - essentially what happens in
@@ -42,5 +47,5 @@ class room =
         self # print ();
         if it > 0 then tick_tock (it - 1) else ()
       in tick_tock maximum_ticks;
-
   end;;
+

@@ -1,6 +1,8 @@
 (* @author Simon Symeonidis 
  * Particle class for the bodies that are to be simulated *)
 
+open Coordinate;;
+
 class particle :
   object
     val mutable mass         : float 
@@ -10,6 +12,7 @@ class particle :
     val mutable label        : string
     val mutable angle_xy     : float
     val mutable angle_xz     : float
+    val mutable coord        : Coordinate.coordinate
 
     method get_mass         : float
     method get_velocity     : float

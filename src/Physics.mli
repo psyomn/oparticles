@@ -1,6 +1,7 @@
 (* @author Simon Symeonidis *) 
 
 open Particle;;
+open CoordinateHelper;;
 
 module Physics : sig
     val v1 : float -> float -> float -> float
@@ -9,7 +10,12 @@ module Physics : sig
     val s3 : float -> float -> float -> float
     val v2 : float -> float -> float -> float
 
-    val do_physicsy_stuff : Particle.particle -> Particle.particle
+    val apply : Particle.particle -> unit
+
+    val pi : float
+    val vecx : float -> float -> float
+    val vecy : float -> float -> float
+    val vecz : float -> float -> float
 
   end;;
 

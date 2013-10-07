@@ -1,4 +1,5 @@
-open Particle;;
+open Physics
+open Particle
 open Random;;
 
 (*
@@ -22,25 +23,25 @@ module ParticleBuilder = struct
      the language *)
   let create_jonny () = 
     let n = new Particle.particle in 
-      n#set_mass         0.2;
-      n#set_label        "jonny";
-      n#set_velocity     0.3;
-      n#set_acceleration 0.0;
-      n#set_group        0;
-      n#set_angle_xz     90.0;
-      n#set_angle_xy     90.0;
+      n # set_mass         0.2;
+      n # set_label        "jonny";
+      n # set_velocity     0.3;
+      n # set_acceleration 0.0;
+      n # set_group        0;
+      n # set_angle_xz     0.0;
+      n # set_angle_xy     0.0;
     n;;
 
   (* Create a fully randomized particle *)
   let create_random () =
     let n = new Particle.particle in
-      n#set_mass         (rfloat 1.0);
-      n#set_label        "random";
-      n#set_velocity     (rfloat 2.0);
-      n#set_acceleration (rfloat 1.0);
-      n#set_group        (rint 4);
-      n#set_angle_xz     (rfloat 360.0);
-      n#set_angle_xy     (rfloat 360.0);
+      n # set_mass         (rfloat 1.0);
+      n # set_label        "random";
+      n # set_velocity     (rfloat 2.0);
+      n # set_acceleration (rfloat 1.0);
+      n # set_group        (rint 4);
+      n # set_angle_xz     (rfloat Physics.pi);
+      n # set_angle_xy     (rfloat Physics.pi);
     n;;
 
   (* Recursive function to create a list of randomized particles *)
@@ -54,10 +55,6 @@ module ParticleBuilder = struct
       print_endline ((List.hd plist) # to_string);
       print_list (List.tl plist);
     end;;
-
-  let rec tick particles =  []
-    
-    
 
 end;; (* module ParticleBuilder *)
 

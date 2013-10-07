@@ -13,6 +13,7 @@ class particle =
     val mutable label        = ""
     val mutable angle_xz     = 0.0
     val mutable angle_xy     = 0.0
+    val mutable coord        = (0.0 , 0.0 , 0.0)
 
     method get_mass = mass
     method get_velocity = velocity
