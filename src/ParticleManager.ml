@@ -13,5 +13,7 @@ module ParticleManager = struct
       Physics.apply (List.hd particles);
       tick (List.tl particles);
     end;;
+
+  let collision_check particles bounds = true
 end;;
 

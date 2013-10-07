@@ -30,7 +30,11 @@ class particle :
     method set_angle_xy     : float  -> unit
     method set_angle_xz     : float  -> unit
 
-    method to_string        : string
+    method move_x : float -> unit
+    method move_y : float -> unit
+    method move_z : float -> unit
+
+    method to_string : string
 
   end;;
 

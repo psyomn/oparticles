@@ -7,6 +7,18 @@
 open Coordinate;;
 
 module CoordinateHelper : sig
-    val move : Coordinate.coordinate -> Coordinate.coordinate
     val hit_wall : Coordinate.coordinate -> Coordinate.coordinate -> bool
+    val fs : Coordinate.coordinate -> float
+    val sc : Coordinate.coordinate -> float
+    val th : Coordinate.coordinate -> float
+
+    val set_fs : 'a -> 'a * 'a * 'a -> 'a * 'a * 'a
+    val set_sc : 'a -> 'a * 'a * 'a -> 'a * 'a * 'a
+    val set_th : 'a -> 'a * 'a * 'a -> 'a * 'a * 'a
+
+    val add_fs : float -> Coordinate.coordinate -> Coordinate.coordinate
+    val add_sc : float -> Coordinate.coordinate -> Coordinate.coordinate
+    val add_th : float -> Coordinate.coordinate -> Coordinate.coordinate
+
+    val to_string : Coordinate.coordinate -> string
   end;;

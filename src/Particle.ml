@@ -2,6 +2,8 @@
  * of the simulation.
  * @author Simon Symeonidis 
  *)
+
+open CoordinateHelper
 open String;;
 
 class particle =
@@ -31,6 +33,10 @@ class particle =
     method set_angle_xy i_a       = angle_xy <- i_a
     method set_angle_xz i_a       = angle_xz <- i_a
 
+    method move_x x = coord <- CoordinateHelper.add_fs x coord
+    method move_y y = coord <- CoordinateHelper.add_sc y coord
+    method move_z z = coord <- CoordinateHelper.add_th z coord
+
     (* Mainly for printing the particle information on screen *)
     method to_string = 
       "Prtcl [label:" ^ label ^ " " 
@@ -38,6 +44,6 @@ class particle =
       ^ "[v:" ^ (string_of_float velocity)
       ^ " a:" ^ (string_of_float acceleration)
       ^ " m:" ^ (string_of_float mass)
-      ^ "] "
+      ^ "] " ^ CoordinateHelper.to_string coord
   end;;
 
