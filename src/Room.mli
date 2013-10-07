@@ -12,9 +12,12 @@ class room :
   object
     val mutable particles : Particle.particle list
     val maximum_ticks : int
+    val mutable current_tick  : int
 
-    method init      : unit -> unit
-    method tick      : unit -> unit
-    method start     : unit -> unit
-    method to_string : unit -> unit
+    method init  : unit -> unit
+    method tick  : unit -> unit
+    method start : unit -> unit
+    method print : unit -> unit
+
   end;;
+
