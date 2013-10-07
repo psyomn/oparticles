@@ -27,6 +27,7 @@ class room =
     (* A tick in the simulation, with a single step *)
     method tick () = 
       current_tick <- current_tick + 1;
+      ParticleBuilder.tick particles;
       print_endline ("Tick # " ^ string_of_int current_tick);
 
     (* Print all the information in the room - essentially what happens in

@@ -13,6 +13,8 @@ module ParticleBuilder : sig
   val create_random   : unit -> Particle.particle
   val create_list     : int  -> Particle.particle list
 
+  val tick            : Particle.particle list -> Particle.particle list
+
   val print_list      : Particle.particle list -> unit
 
 end;;

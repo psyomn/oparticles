@@ -1,4 +1,7 @@
 (* @author Simon Symeonidis *)
+
+open Particle;;
+
 module Physics = struct
     (* SUVAT Equations *)
 

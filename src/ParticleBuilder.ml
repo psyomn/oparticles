@@ -55,5 +55,9 @@ module ParticleBuilder = struct
       print_list (List.tl plist);
     end;;
 
+  let rec tick particles =  []
+    
+    
+
 end;; (* module ParticleBuilder *)
 
