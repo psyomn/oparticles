@@ -24,6 +24,9 @@ class particle =
     method get_label = label
     method get_angle_xz = angle_xz
     method get_angle_xy = angle_xy
+    method get_x = CoordinateHelper.fs coord
+    method get_y = CoordinateHelper.sc coord
+    method get_z = CoordinateHelper.th coord
 
     method set_mass i_mass        = mass <- i_mass
     method set_velocity i_vel     = velocity <- i_vel

@@ -21,6 +21,9 @@ class particle :
     method get_label        : string
     method get_angle_xz     : float
     method get_angle_xy     : float
+    method get_x            : float
+    method get_y            : float
+    method get_z            : float
 
     method set_mass         : float  -> unit
     method set_velocity     : float  -> unit

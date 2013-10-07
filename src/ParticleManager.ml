@@ -4,6 +4,7 @@
  * @author Simon Symeonidis
  *)
 
+open CoordinateHelper
 open Physics;;
 
 module ParticleManager = struct
@@ -14,6 +15,34 @@ module ParticleManager = struct
       tick (List.tl particles);
     end;;
 
-  let collision_check particles bounds = true
+  (* Bounce against X wall *)
+  let bounce_x b p =
+    if p # get_x > CoordinateHelper.fs b || p # get_x < CoordinateHelper.th b
+    then p # set_angle_xy (p # get_angle_xy +. Physics.half_pi)
+    else ();;
+
+  (* Bounce against Y wall *)
+  let bounce_z b p = 
+    if p # get_z > CoordinateHelper.fs b || p # get_z < CoordinateHelper.th b
+    then p # set_angle_xy (p # get_angle_xz +. Physics.half_pi)
+    else ();;
+
+  (* Bounce against Z wall *)
+  let bounce_y b p = 
+    if p # get_y > CoordinateHelper.fs b || p # get_y < CoordinateHelper.th b
+    then p # set_angle_xy (p # get_angle_xy +. Physics.half_pi)
+    else ();;
+
+  let bounce bounds particle =
+    bounce_x bounds particle;
+    bounce_y bounds particle;
+    bounce_z bounds particle;;
+
+  (* Check collisions with the wall *)
+  let rec collision_check particles bounds = 
+    if particles = [] then () else begin
+      bounce bounds (List.hd particles);
+      collision_check (List.tl particles) bounds;
+    end;;
 end;;
 
